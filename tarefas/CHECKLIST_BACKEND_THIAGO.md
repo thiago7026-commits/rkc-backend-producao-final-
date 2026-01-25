@@ -1,5 +1,5 @@
 # Checklist de Entrega — Back-end (Admin + RBAC)
-Responsável: Thiago Dias
+Responsável: Thiago Dias  
 Stack: GitHub + Supabase
 
 ---
@@ -12,30 +12,30 @@ Stack: GitHub + Supabase
 ---
 
 ## Modelo de Acesso (RBAC)
-- [ ] Definir papéis (roles) e permissões por papel
+- [x] Definir papéis (roles) e permissões por papel
 - [ ] Definir permissões por módulo (ex.: Matérias, Projetos, Equipe)
 - [ ] Definir permissões por ação (ex.: criar, editar, publicar, excluir)
 
 ---
 
 ## Banco de Dados (Supabase)
-- [ ] Criar tabelas necessárias para:
-  - [ ] Perfis de usuário/equipe
-  - [ ] Papéis (roles)
+- [x] Criar tabelas necessárias para:
+  - [x] Perfis de usuário/equipe
+  - [x] Papéis (roles)
   - [ ] Permissões
-  - [ ] Associação usuário ⇄ papel/permissão
-- [ ] Definir relacionamentos e constraints
+  - [x] Associação usuário ⇄ papel/permissão
+- [x] Definir relacionamentos e constraints
 
 ---
 
 ## Segurança (RLS obrigatório)
-- [ ] Ativar RLS nas tabelas que o admin manipula
-- [ ] Criar políticas por papel/permissão:
-  - [ ] Leitura
+- [x] Ativar RLS nas tabelas que o admin manipula
+- [x] Criar políticas por papel/permissão:
+  - [x] Leitura
   - [ ] Inserção
   - [ ] Atualização
   - [ ] Remoção
-- [ ] Garantir que usuário sem permissão não acessa nem via API
+- [x] Garantir que usuário sem permissão não acessa nem via API
 
 ---
 
