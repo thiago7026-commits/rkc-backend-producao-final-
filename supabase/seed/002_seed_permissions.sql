@@ -1,0 +1,2 @@
+-- Seed inicial de permissões
+-- Adicione inserts conforme necessário.

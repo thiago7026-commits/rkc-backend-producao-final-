@@ -1,0 +1,2 @@
+-- Seed inicial de RBAC
+-- Adicione inserts conforme necessário.
