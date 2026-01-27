@@ -1,10 +1,10 @@
-
 begin;
 
--- Seed de permissões base (idempotente)
--- Formato esperado: (modulo, acao, role, permitido)
+-- Seed de permissões base (PROD)
+-- Tabela: permissoes
+-- Colunas reais: modulo | acao | role_name | permitido
 
-insert into public.permissoes (modulo, acao, role, permitido)
+insert into public.permissoes (modulo, acao, role_name, permitido)
 values
   -- MATERIAS
   ('materias', 'ler',     'autor',  true),
@@ -34,17 +34,17 @@ values
   ('projetos', 'excluir', 'admin',  true),
 
   -- EQUIPE
-  ('equipe',   'ler',     'editor', true),
-  ('equipe',   'criar',   'editor', true),
-  ('equipe',   'editar',  'editor', true),
-  ('equipe',   'excluir', 'editor', true),
+  ('equipe', 'ler',     'editor', true),
+  ('equipe', 'criar',   'editor', true),
+  ('equipe', 'editar',  'editor', true),
+  ('equipe', 'excluir', 'editor', true),
 
-  ('equipe',   'ler',     'admin',  true),
-  ('equipe',   'criar',   'admin',  true),
-  ('equipe',   'editar',  'admin',  true),
-  ('equipe',   'excluir', 'admin',  true)
+  ('equipe', 'ler',     'admin',  true),
+  ('equipe', 'criar',   'admin',  true),
+  ('equipe', 'editar',  'admin',  true),
+  ('equipe', 'excluir', 'admin',  true)
 
-on conflict (modulo, acao, role) do update
-set permitido = excluded.permitido;
+on conflict (modulo, acao, role_name)
+do update set permitido = excluded.permitido;
 
 commit;
