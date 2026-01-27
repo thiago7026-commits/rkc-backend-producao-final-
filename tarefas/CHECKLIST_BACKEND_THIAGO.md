@@ -69,7 +69,7 @@ Ambiente: **PRODUÇÃO (único ambiente oficial)**
 - [x] CRUD de Matérias
 - [x] CRUD de Projetos
 - [x] CRUD de Equipe
-- [ ] Leitura pública apenas de conteúdo publicado (validação final)
+- [x] Leitura pública apenas de conteúdo publicado
 
 ---
 
