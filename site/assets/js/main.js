@@ -1,10 +1,3 @@
-const navToggle = document.querySelector('.nav-toggle');
-const mainNav = document.querySelector('.main-nav');
+const timestamp = new Date().toLocaleString("pt-BR");
 
-if (navToggle && mainNav) {
-  navToggle.addEventListener('click', () => {
-    mainNav.classList.toggle('open');
-    const expanded = navToggle.getAttribute('aria-expanded') === 'true';
-    navToggle.setAttribute('aria-expanded', String(!expanded));
-  });
-}
+console.info(`Kalunga Comunicações: site carregado em ${timestamp}.`);

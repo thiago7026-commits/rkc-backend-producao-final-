@@ -1,0 +1,21 @@
+[build]
+  publish = "site"
+  command = ""
+
+[[redirects]]
+  from = "http://kalungacomunicacoes.org/*"
+  to = "https://kalungacomunicacoes.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.kalungacomunicacoes.org/*"
+  to = "https://kalungacomunicacoes.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.kalungacomunicacoes.org/*"
+  to = "https://kalungacomunicacoes.org/:splat"
+  status = 301
+  force = true
