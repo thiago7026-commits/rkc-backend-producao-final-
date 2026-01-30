@@ -1,0 +1,29 @@
+[build]
+  publish = "site"
+  command = ""
+
+[context.production.environment]
+  NODE_ENV = "production"
+
+[[redirects]]
+  from = "http://kalungacomunicacoes.org/*"
+  to = "https://kalungacomunicacoes.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.kalungacomunicacoes.org/*"
+  to = "https://kalungacomunicacoes.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.kalungacomunicacoes.org/*"
+  to = "https://kalungacomunicacoes.org/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
