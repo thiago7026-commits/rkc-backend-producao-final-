@@ -1,17 +1,42 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalunga Comunicações | Admin</title>
-    <link rel="stylesheet" href="./style.css" />
-    <script src="./script.js" defer></script>
-  </head>
-  <body>
-    <main class="admin-wrapper">
-      <h1>Painel Administrativo</h1>
-      <p>Área restrita para gestão de conteúdo e atualizações do site.</p>
-      <button type="button" class="admin-action">Acessar configurações</button>
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>RKC Admin</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css"/>
+  <script src="/admin/env.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div class="brand"><span class="dot"></span> RKC Admin <span class="pill">PROD</span></div>
+      <div style="display:flex; gap:10px; align-items:center;">
+        <span class="pill" id="mePill">carregando…</span>
+        <button class="btn" id="btnLogout">Sair</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container layout">
+    <aside class="sidebar">
+      <nav class="nav" id="nav"></nav>
+      <div class="hr"></div>
+      <div class="card">
+        <div class="sub" style="margin:0 0 8px 0;">Acesso</div>
+        <div id="roleBadges" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div id="app"></div>
     </main>
-  </body>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <div class="modal-backdrop" id="modalBackdrop"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script type="module" src="/admin/js/app.js"></script>
+</body>
 </html>
