@@ -9,6 +9,24 @@ Este repositório contém **somente o back-end** do projeto RKC (Supabase: banco
 - A pasta `site/` contém o conteúdo publicado em `public_html/` na Hostinger.
 - As pastas `supabase/`, `docs/` e `checklists/` continuam no repo para backend e documentação.
 
+## Admin (site/admin) — configuração Supabase
+
+O painel `/admin` depende das variáveis `SUPABASE_URL` e `SUPABASE_ANON_KEY` disponíveis em runtime.
+
+### Produção (Netlify)
+Configure as variáveis de ambiente no painel do Netlify:
+- `SUPABASE_URL`
+- `SUPABASE_ANON_KEY`
+
+O build do Netlify gera automaticamente `site/admin/env.js` com essas variáveis (ver `netlify.toml`).
+
+### Desenvolvimento local
+1. Copie `site/admin/env.example.js` para `site/admin/env.local.js`.
+2. Preencha as chaves do Supabase no `env.local.js`.
+3. Abra `/admin` normalmente (o arquivo `env.local.js` é carregado antes do app).
+
+> **Importante:** `env.local.js` não deve ser commitado.
+
 ---
 
 ## Ambiente oficial
