@@ -1,0 +1,171 @@
+/* =========================================================
+   RKC - ADMIN LOGIN (FULLSCREEN BG + CARD)
+   Arquivos:
+   - index.html
+   - style.css
+   - script.js
+   ========================================================= */
+
+:root{
+  --bg-card: #0f2d1f;
+  --accent: #6fcf97;
+  --accent-hover: #58b884;
+  --text: #ffffff;
+  --muted: rgba(255,255,255,.78);
+  --shadow: rgba(0,0,0,.55);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+html, body { height: 100%; }
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: var(--text);
+}
+
+/* ===== Background full screen ===== */
+.login-bg{
+  min-height: 100vh;
+  position: relative;
+  display: grid;
+  place-items: center;
+  /* Troque a imagem aqui (bg) quando quiser */
+  background-image: url("https://images.unsplash.com/photo-1523741543316-beb7fc7023d8?auto=format&fit=crop&w=2400&q=80");
+  background-size: cover;
+  background-position: center;
+}
+
+/* Overlay escuro para leitura */
+.login-overlay{
+  position:absolute;
+  inset:0;
+  background: rgba(0,0,0,.60);
+}
+
+/* ===== Card de Login ===== */
+.login-card{
+  position: relative;
+  z-index: 2;
+  width: min(420px, calc(100% - 32px));
+  background: var(--bg-card);
+  border-radius: 14px;
+  padding: 38px 34px;
+  box-shadow: 0 22px 55px var(--shadow);
+}
+
+/* Cabeçalho */
+.login-header h1{
+  text-align:center;
+  font-size: 26px;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.login-header p{
+  text-align:center;
+  font-size: 14px;
+  color: var(--muted);
+  margin-bottom: 26px;
+}
+
+/* ===== Inputs ===== */
+.input-group{
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.input-group input{
+  width: 100%;
+  padding: 13px 10px 10px;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid var(--accent);
+  color: var(--text);
+  font-size: 16px;
+  outline: none;
+}
+
+.input-group label{
+  position:absolute;
+  left:0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: rgba(255,255,255,.75);
+  pointer-events: none;
+  transition: .25s ease;
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label,
+.input-group input:valid + label{
+  top: -6px;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.field-hint{
+  display:block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: rgba(255,255,255,.62);
+}
+
+/* ===== Botão ===== */
+button{
+  width: 100%;
+  margin-top: 10px;
+  padding: 14px 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--accent);
+  color: #0f2d1f;
+  font-size: 16px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: .2s ease;
+}
+
+button:hover{ background: var(--accent-hover); }
+button:disabled{
+  opacity: .65;
+  cursor: not-allowed;
+}
+
+/* ===== Recuperação ===== */
+.recover{
+  margin-top: 16px;
+  display:flex;
+  gap: 8px;
+  justify-content:center;
+  align-items:center;
+  font-size: 14px;
+}
+
+.recover i{ color: var(--accent); }
+.recover a{
+  color: var(--accent);
+  text-decoration:none;
+}
+.recover a:hover{ text-decoration: underline; }
+
+/* ===== Mensagem ===== */
+.msg{
+  margin-top: 14px;
+  text-align:center;
+  font-size: 13px;
+  color: rgba(255,255,255,.90);
+  min-height: 18px;
+}
+
+/* Rodapé */
+.login-footer{
+  margin-top: 22px;
+  text-align:center;
+  font-size: 12px;
+  color: rgba(255,255,255,.65);
+}
+
+/* Responsivo */
+@media (max-width: 480px){
+  .login-card{ padding: 30px 22px; }
+}

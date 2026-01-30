@@ -5,6 +5,10 @@ Este repositório contém **somente o back-end** do projeto RKC (Supabase: banco
 > **Importante:** o front-end está em um repositório separado (Felipe).  
 > A **junção** (merge) será feita depois, copiando as pastas e arquivos deste repo para o repositório final.
 
+## Site estático (Hostinger)
+- A pasta `site/` contém o conteúdo publicado em `public_html/` na Hostinger.
+- As pastas `supabase/`, `docs/` e `checklists/` continuam no repo para backend e documentação.
+
 ---
 
 ## Ambiente oficial
