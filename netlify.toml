@@ -1,11 +1,9 @@
 [build]
   publish = "site"
-  command = """bash -c 'cat > site/admin/env.js << "EOF"
-window.__ENV__ = {
-  SUPABASE_URL: "'"$SUPABASE_URL"'",
-  SUPABASE_ANON_KEY: "'"$SUPABASE_ANON_KEY"'"
-};
-EOF'"""
+  command = "node ./scripts/netlify-generate-env.cjs"
+
+[context.production.environment]
+  NODE_ENV = "production"
 
 [[redirects]]
   from = "http://kalungacomunicacoes.org/*"
