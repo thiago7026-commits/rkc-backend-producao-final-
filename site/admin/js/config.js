@@ -5,6 +5,7 @@ export const CONFIG = {
   TABLES: {
     materias: "materias",
     projetos: "projetos",
+    pesquisas: "pesquisas",
     equipe: "equipe",
     profiles: "profiles", // ou "perfis"
   },
@@ -34,6 +35,11 @@ export const CONFIG = {
       capa_url: "capa_url",
       publicado_transparencia: "publicado_transparencia",
       published_bool: "published",
+    },
+
+    pesquisas: {
+      titulo: "titulo",
+      slug: "slug",
     },
 
     equipe: {

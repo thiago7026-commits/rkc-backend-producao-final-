@@ -7,6 +7,7 @@ import { getRoute, onRouteChange, setRoute } from "./router.js";
 import { renderDashboard } from "./pages/dashboard.js";
 import { renderMaterias } from "./pages/materias.js";
 import { renderProjetos } from "./pages/projetos.js";
+import { renderPesquisas } from "./pages/pesquisas.js";
 import { renderEquipe } from "./pages/equipe.js";
 import { renderUsuarios } from "./pages/usuarios.js";
 
@@ -81,6 +82,7 @@ async function bootApp(){
   nav.innerHTML = [
     navItem("/dashboard", "Painel", "overview"),
     (flags.admin || flags.editor || flags.autor) ? navItem("/materias", "Matérias", "cms") : "",
+    (flags.admin || flags.editor) ? navItem("/pesquisas", "Pesquisas", "cms") : "",
     (flags.admin || flags.editor) ? navItem("/projetos", "Projetos", "site") : "",
     (flags.admin || flags.editor) ? navItem("/equipe", "Equipe", "site") : "",
     (flags.admin) ? navItem("/usuarios", "Usuários & Papéis", "rbac") : "",
@@ -101,6 +103,7 @@ async function bootApp(){
     try{
       if (route === "/dashboard") app.innerHTML = await renderDashboard(ctx);
       else if (route === "/materias") app.innerHTML = await renderMaterias(ctx);
+      else if (route === "/pesquisas") app.innerHTML = await renderPesquisas(ctx);
       else if (route === "/projetos") app.innerHTML = await renderProjetos(ctx);
       else if (route === "/equipe") app.innerHTML = await renderEquipe(ctx);
       else if (route === "/usuarios") app.innerHTML = await renderUsuarios(ctx);
