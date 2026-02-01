@@ -1,7 +1,8 @@
 const fs = require("fs");
 const path = require("path");
 
-const outputPath = path.join(__dirname, "..", "site", "admin", "env.js");
+const adminOutputPath = path.join(__dirname, "..", "site", "admin", "env.js");
+const rootOutputPath = path.join(__dirname, "..", "site", "env.js");
 const supabaseUrl = process.env.SUPABASE_URL || "";
 const supabaseAnonKey = process.env.SUPABASE_ANON_KEY || "";
 
@@ -16,9 +17,13 @@ const contents =
   `  SUPABASE_ANON_KEY: ${JSON.stringify(supabaseAnonKey)}\n` +
   `};\n`;
 
-fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-fs.writeFileSync(outputPath, contents, "utf8");
+fs.mkdirSync(path.dirname(adminOutputPath), { recursive: true });
+fs.writeFileSync(adminOutputPath, contents, "utf8");
 
-console.log("[netlify-generate-env] Wrote", outputPath);
+fs.mkdirSync(path.dirname(rootOutputPath), { recursive: true });
+fs.writeFileSync(rootOutputPath, contents, "utf8");
+
+console.log("[netlify-generate-env] Wrote", adminOutputPath);
+console.log("[netlify-generate-env] Wrote", rootOutputPath);
 console.log("[netlify-generate-env] SUPABASE_URL present:", Boolean(supabaseUrl));
 console.log("[netlify-generate-env] SUPABASE_ANON_KEY present:", Boolean(supabaseAnonKey));
