@@ -32,6 +32,11 @@
         cursor: pointer;
       }
     </style>
+    <script type="module">
+      import { requireAdmin } from "/admin/admin-guard.js";
+
+      await requireAdmin();
+    </script>
   </head>
   <body>
     <div class="panel">
@@ -40,17 +45,14 @@
       <button id="logoutButton">Sair</button>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script type="module">
-      import { logout, requireAdmin } from "/js/auth.js";
-
-      await requireAdmin();
+      import { supabase } from "/js/supabaseClient.js";
 
       document
         .getElementById("logoutButton")
         .addEventListener("click", async () => {
-          await logout();
-          window.location.href = "/login.html";
+          await supabase.auth.signOut();
+          window.location.href = "/admin/admin-login.html";
         });
     </script>
   </body>
