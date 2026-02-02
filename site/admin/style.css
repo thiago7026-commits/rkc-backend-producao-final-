@@ -1,0 +1,32 @@
+body {
+  font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+  background: #0f172a;
+  color: #f8fafc;
+  margin: 0;
+  padding: 0;
+}
+
+.admin-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  padding: 2rem;
+}
+
+.admin-action {
+  border: none;
+  background: #38bdf8;
+  color: #0f172a;
+  font-weight: 600;
+  padding: 0.8rem 1.6rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.admin-action:hover {
+  background: #0ea5e9;
+}
