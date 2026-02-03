@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Fulô de Pequi — Admin Login</title>
+  <link rel="stylesheet" href="/admin/assets/admin.css"/>
+  <script src="/admin/env.local.js"></script>
+  <script src="/admin/env.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container inner">
+      <div class="brand"><span class="dot"></span> Fulô de Pequi Admin</div>
+      <div class="pill">/admin/login</div>
+    </div>
+  </div>
+
+  <div class="container" style="padding:24px 0 40px;">
+    <div class="main" style="max-width:560px;margin:0 auto;">
+      <h1 class="h1">Acesso exclusivo</h1>
+      <p class="sub">Entre com seu e-mail e senha para acessar o painel administrativo.</p>
+
+      <div class="card">
+        <form id="loginForm" class="grid" style="gap:16px;">
+          <div>
+            <label for="email">E-mail</label>
+            <input id="email" type="email" placeholder="seuemail@dominio.com" required />
+          </div>
+          <div>
+            <label for="password">Senha</label>
+            <input id="password" type="password" placeholder="••••••••" required />
+          </div>
+          <div class="toolbar" style="margin-top:12px;">
+            <div class="tools-left">
+              <button class="btn primary" type="submit">Entrar</button>
+              <button class="btn" type="button" id="btnReset">Esqueci a senha</button>
+            </div>
+          </div>
+        </form>
+        <p id="loginMessage" class="sub" style="margin-top:12px;"></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="/js/supabaseClient.js"></script>
+  <script src="/admin/admin-login.js"></script>
+</body>
+</html>

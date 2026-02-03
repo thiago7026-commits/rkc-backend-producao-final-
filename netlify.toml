@@ -6,6 +6,16 @@
   NODE_ENV = "production"
 
 [[redirects]]
+  from = "/admin"
+  to = "/admin/admin-login.html"
+  status = 302
+
+[[redirects]]
+  from = "/admin/"
+  to = "/admin/admin-login.html"
+  status = 302
+
+[[redirects]]
   from = "http://kalungacomunicacoes.org/*"
   to = "https://kalungacomunicacoes.org/:splat"
   status = 301

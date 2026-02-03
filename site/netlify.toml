@@ -3,10 +3,10 @@
 
 [[redirects]]
   from = "/admin"
-  to = "/admin/index.html"
-  status = 200
+  to = "/admin/admin-login.html"
+  status = 302
 
 [[redirects]]
-  from = "/admin/*"
-  to = "/admin/index.html"
-  status = 200
+  from = "/admin/"
+  to = "/admin/admin-login.html"
+  status = 302

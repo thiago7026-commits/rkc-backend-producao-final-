@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>RKC Admin</title>
+  <title>Fulô de Pequi — Admin</title>
   <link rel="stylesheet" href="/admin/assets/admin.css"/>
   <script src="/admin/env.local.js"></script>
   <script src="/admin/env.js"></script>
@@ -11,33 +11,59 @@
 <body>
   <div class="topbar">
     <div class="container inner">
-      <div class="brand"><span class="dot"></span> RKC Admin <span class="pill">PROD</span></div>
+      <div class="brand"><span class="dot"></span> Fulô de Pequi Admin</div>
       <div style="display:flex; gap:10px; align-items:center;">
-        <span class="pill" id="mePill">carregando…</span>
+        <span class="pill" id="whoami">carregando…</span>
         <button class="btn" id="btnLogout">Sair</button>
       </div>
     </div>
   </div>
 
-  <div class="container layout">
-    <aside class="sidebar">
-      <nav class="nav" id="nav"></nav>
-      <div class="hr"></div>
-      <div class="card">
-        <div class="sub" style="margin:0 0 8px 0;">Acesso</div>
-        <div id="roleBadges" style="display:flex;flex-wrap:wrap;gap:8px;"></div>
-      </div>
-    </aside>
+  <div class="container" style="padding:24px 0 40px;">
+    <div class="main" style="max-width:960px;margin:0 auto;">
+      <section class="card" style="margin-bottom:16px;">
+        <h2 class="h2">Calendário</h2>
+        <p class="sub">Placeholder para integração futura.</p>
+        <div id="calendarRoot"></div>
+      </section>
 
-    <main class="main">
-      <div id="app"></div>
-    </main>
+      <section class="card" style="margin-bottom:16px;">
+        <h2 class="h2">Valor da diária</h2>
+        <p class="sub">Atualize o valor da diária (sem backend por enquanto).</p>
+        <form id="dailyRateForm" class="grid" style="gap:12px;">
+          <div>
+            <label for="dailyRate">Valor da diária (R$)</label>
+            <input id="dailyRate" type="number" min="0" step="0.01" placeholder="0,00" />
+          </div>
+          <div class="toolbar" style="margin-top:12px;">
+            <div class="tools-left">
+              <button class="btn primary" type="submit">Salvar</button>
+            </div>
+          </div>
+        </form>
+      </section>
+
+      <section class="card">
+        <h2 class="h2">Fotos do painel</h2>
+        <p class="sub">Placeholder para listagem e upload (sem backend).</p>
+        <div id="panelPhotos">
+          <ul>
+            <li>Nenhuma foto cadastrada.</li>
+          </ul>
+          <div class="toolbar" style="margin-top:12px;">
+            <div class="tools-left">
+              <input type="file" accept="image/*" />
+              <button class="btn" type="button">Enviar</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 
-  <div class="toast" id="toast"></div>
-  <div class="modal-backdrop" id="modalBackdrop"></div>
-
+  <script src="/admin/admin-guard.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script type="module" src="/admin/js/app.js"></script>
+  <script src="/js/supabaseClient.js"></script>
+  <script src="/admin/admin-index.js"></script>
 </body>
 </html>
